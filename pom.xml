@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>exchange.core2</groupId>
@@ -15,7 +14,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.0</version>
-        <relativePath/>
+        <relativePath />
     </parent>
 
     <properties>
@@ -32,11 +31,12 @@
         <HikariCP.version>3.1.0</HikariCP.version>
 
         <eclipse.collections.version>9.2.0</eclipse.collections.version>
+
+        <swagger.version>3.0.0</swagger.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
@@ -77,6 +77,23 @@
             <version>0.5.4-SNAPSHOT</version>
         </dependency>
 
+        <!-- swagger for api documentation and rest client generation -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <!-- swagger-ui for api documentation web ui -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-data-rest</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -140,7 +157,22 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/org.springframework.plugin/spring-plugin-core -->
+        <dependency>
+            <groupId>org.springframework.plugin</groupId>
+            <artifactId>spring-plugin-core</artifactId>
+            <version>2.0.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.mangofactory/swagger-springmvc -->
+        <dependency>
+            <groupId>com.mangofactory</groupId>
+            <artifactId>swagger-springmvc</artifactId>
+            <version>1.0.2</version>
+        </dependency>
         <!-- DATABASE PERSISTENCE -->
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
@@ -195,10 +227,10 @@
             <version>${HikariCP.version}</version>
         </dependency>
         <dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
         <!-- Eclipse (Goldman Sachs) collections -->
         <dependency>
             <groupId>org.eclipse.collections</groupId>
@@ -227,7 +259,7 @@
         </dependency>
 
     </dependencies>
-    
+
     <profiles>
         <profile>
             <id>default</id>

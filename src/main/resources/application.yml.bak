@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+  jpa.properties.hibernate:
+    jdbc:
+      lob:
+        non_contextual_creation: true
+server:
+  port: 8080
+
+app:
+  name: exchange-gateway-rest
+  api:
+    title: exchange-gateway-reset-apis
+    version: 0.0.1-SNAPSHOT
+    description: Spring Boot APIs description
+    base-package: exchange.core2.rest.controllers
+    contact-name: no idea
+    contact-email: noidea@wtf.com
+    swagger:
+      enable: true
